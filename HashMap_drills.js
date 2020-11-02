@@ -49,11 +49,41 @@ function palindrome(str) {
             bool = false;
         }
     }
-    console.log(bool)
     return bool;
 
 }
 
-palindrome('sseeeaas')
+//palindrome('sseeeaas')
+
+function anagram(arr) {
+    const map = new HashMap;
+
+    const sorted = (str) => {
+        const array = str.split('').sort().join('')
+        return array;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        let w = sorted(arr[i])
+        const val = map.get(w) ? map.get(w) : []
+        map.set(w, [arr[i], ...val])
+        console.log(map.get(w))
+
+    }
+
+    console.log(map.get(sorted(arr[0])))
+
+}
+
+function recursive(arr, map = null) {
+    map = null ? new HashMap : map;
 
 
+
+
+
+
+}
+
+recursive(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race'])
+//anagram(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race'])
